@@ -9689,3 +9689,45 @@ h6,
         box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
         transform: translateY(-2px);
     }
+
+/* Floating Position */
+    #cla-badge {
+        position: fixed;
+        bottom: 20px;
+        left: 20px; /* Moved to bottom-left */
+        z-index: 9999;
+        animation: fadeInBadge 1.5s ease forwards;
+        opacity: 0; /* Start invisible for animation */
+    }
+
+    /* Image Styling */
+    #cla-badge img {
+        height: 60px;
+        width: auto;
+        opacity: 0.8;
+        transition: opacity 0.3s ease;
+    }
+
+    /* Hover Glow Effect */
+    #cla-badge img:hover {
+        opacity: 1;
+    }
+
+    /* Fade-in Animation */
+    @keyframes fadeInBadge {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Hide badge on small devices */
+    @media (max-width: 768px) {
+        #cla-badge {
+            display: none;
+        }
+    }
